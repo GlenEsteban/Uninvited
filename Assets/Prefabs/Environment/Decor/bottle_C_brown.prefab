@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.91
+      value: -2.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.44
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
       propertyPath: m_LocalRotation.w
@@ -78,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9170475971718960622}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7867400976786951803}
   m_SourcePrefab: {fileID: 100100000, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
 --- !u!1 &623273290836612230 stripped
 GameObject:
@@ -283,3 +286,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0.0000019147992, y: 0.44285798, z: 0.0000040903687}
+--- !u!208 &7867400976786951803
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623273290836612230}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.36900002, y: 0.453, z: 0.36900002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.453, z: 0}
+  m_TimeToStationary: 0.5
