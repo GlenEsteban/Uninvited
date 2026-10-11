@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   exitDoor: {fileID: 6275010773676469972}
   lockedDoor: {fileID: 4682959108221964703}
+  doorType: 0
 --- !u!1001 &6395132353719515021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,6 +99,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4605092454422527545, guid: 281ca49109db48047b72fe1f13717c7b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917572815936555283, guid: 281ca49109db48047b72fe1f13717c7b, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -165,6 +170,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595415996548383039, guid: 2951293afb4c07d49ba25aa42a063074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172867018488767471, guid: 2951293afb4c07d49ba25aa42a063074, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
