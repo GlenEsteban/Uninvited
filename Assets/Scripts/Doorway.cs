@@ -11,7 +11,7 @@ public class Doorway : MonoBehaviour {
             print("Locked");
         }
         else {
-            print("Enter");
+            GameStateManager.Instance.ChangeGameState(GameState.RoomTransition);
         }
     }
 }
