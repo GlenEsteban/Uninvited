@@ -56,7 +56,7 @@ public class PlayerSFX : MonoBehaviour {
             isAirborne = true;
 
             if (characterController.velocity.y > 0f) {
-                audioSource.pitch = 1.2f;
+                audioSource.pitch = 1.3f;
 
                 PlayRandomAudioClip(footstepsSFX);
             }
@@ -65,7 +65,7 @@ public class PlayerSFX : MonoBehaviour {
         if (isAirborne && !wasGrounded && isGrounded) {
             isAirborne = false;
 
-            audioSource.pitch = 0.8f;
+            audioSource.pitch = 0.7f;
 
             PlayRandomAudioClip(footstepsSFX);
         }

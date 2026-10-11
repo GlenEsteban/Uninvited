@@ -52,7 +52,9 @@ public class GameStateManager : MonoBehaviour {
     public void RunRoomTransition() {
         Debug.Log("EVENT: RoomTransition");
 
-        sceneLoader.ReloadScene(1);
+        sceneLoader.ReloadScene(0.5f);
+
+        PlayerStateManager.Instance.IncrementRoomsExplored();
 
         RoomTransition?.Invoke();
     }
