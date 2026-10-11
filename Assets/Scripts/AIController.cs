@@ -50,4 +50,9 @@ public class AIController : MonoBehaviour {
             IsChasing = false;   
         }
     }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
+    }
 }

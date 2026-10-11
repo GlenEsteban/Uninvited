@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameStateManager : MonoBehaviour {
     public static GameStateManager Instance { get; private set; }
@@ -10,6 +11,7 @@ public class GameStateManager : MonoBehaviour {
     public event Action GameOver;
 
     [SerializeField] private SceneLoader sceneLoader;
+    [SerializeField] private GameObject player;
 
     public GameState currentGameState;
 
@@ -53,6 +55,9 @@ public class GameStateManager : MonoBehaviour {
         Debug.Log("EVENT: RoomTransition");
 
         sceneLoader.ReloadScene(0.5f);
+
+        player.GetComponent<Health>().EnableInvincibility(99);
+        player.GetComponent<PlayerInput>().enabled = false;
 
         PlayerStateManager.Instance.IncrementRoomsExplored();
 

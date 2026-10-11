@@ -6,15 +6,24 @@ using UnityEngine;
 public class Combat : MonoBehaviour {
     public event Action Attack;
 
+    [SerializeField] int attackAmount = 19;
     [SerializeField] float attackRate = 1f;
     public bool IsInRange { get; private set; } = false;
+
+    private GameObject target;
     private void OnTriggerEnter(Collider other) {
         if (other.tag != "Player") { return; }
+
+        target = other.gameObject;
+
+        print(target.name);
 
         IsInRange = true;
     }
     private void OnTriggerExit(Collider other) {
         if (other.tag != "Player") { return; }
+
+        target = null;
 
         IsInRange = false;
     }
@@ -24,7 +33,10 @@ public class Combat : MonoBehaviour {
             if (IsInRange) {
                 Attack?.Invoke();
 
-                print("ATTACK");
+                Health targetHealth = target.GetComponentInParent<Health>();
+                if (targetHealth == null) { continue; }
+
+                targetHealth.TakeDamage(attackAmount);
 
                 yield return new WaitForSeconds(attackRate);
             }

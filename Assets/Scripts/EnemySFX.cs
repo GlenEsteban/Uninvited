@@ -21,7 +21,6 @@ public class EnemySFX : MonoBehaviour {
     [SerializeField] private float movementSFXThreshold = 0.5f;
     [SerializeField] private float idleSFXRate = 2f;
     [SerializeField] private float chaseSFXRate = 2f;
-    [SerializeField] private float walkSpeedSFXRate = 0.5f;
     [SerializeField] private float runSpeedSFXRate = 0.25f;
 
     private void OnEnable() {

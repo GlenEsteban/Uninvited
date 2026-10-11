@@ -7,6 +7,8 @@ public class MutualSpawnRPG : MonoBehaviour {
 
     private void Start() {
         DespawnObjectsUntilSpawnCount();
+
+        spawnableObjects.RemoveAll(obj => obj == null);
     }
 
     private void DespawnObjectsUntilSpawnCount() {

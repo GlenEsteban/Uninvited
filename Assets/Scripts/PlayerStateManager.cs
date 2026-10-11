@@ -3,10 +3,14 @@ using UnityEngine;
 public class PlayerStateManager : MonoBehaviour {
     public static PlayerStateManager Instance { get; private set; }
 
-    [SerializeField] private int roomsExplored = 0;
+    [field: SerializeField] public int CurrentHealth { get; private set; } = 100;
+    [field: SerializeField] public int RoomsExplored { get; private set; } = 0;
 
     public void IncrementRoomsExplored() {
-        roomsExplored++;
+        RoomsExplored++;
+    }
+    public void UpdateCurrentHealth(int amount) {
+        CurrentHealth = amount;
     }
 
     private void Awake() {
