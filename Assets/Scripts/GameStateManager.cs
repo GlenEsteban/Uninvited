@@ -22,6 +22,7 @@ public class GameStateManager : MonoBehaviour {
         }
 
         currentGameState = GameState.Exploration;
+
     }
     public void ChangeGameState(GameState state) {
         if (currentGameState == state) { return; }
