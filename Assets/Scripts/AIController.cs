@@ -1,6 +1,4 @@
 using System;
-using Unity.AI.Assistant.Agents;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
