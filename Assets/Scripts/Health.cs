@@ -49,6 +49,9 @@ public class Health : MonoBehaviour {
 
         if (CurrentHealth <= 0) {
             OnDeath?.Invoke();
+
+            // Create a Death Handler script
+            GameStateManager.Instance.ChangeGameState(GameState.GameOver);
         }   
 
         OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
@@ -63,7 +66,12 @@ public class Health : MonoBehaviour {
     }
 
     private IEnumerator RegenerateHealth() {
+        if (CurrentHealth <= 0) {
+            yield break;
+        }
+
         yield return new WaitForSeconds(TimeUntilRegen);
+
 
         while (CurrentHealth < MaxHealth) {
             CurrentHealth = Math.Min(MaxHealth, CurrentHealth + RegenAmount);

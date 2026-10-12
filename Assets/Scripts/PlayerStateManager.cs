@@ -13,10 +13,13 @@ public class PlayerStateManager : MonoBehaviour {
 
         LevelUp?.Invoke(Level);
     }
+    public void ResetState() {
+        CurrentHealth = 100;
+        Level = 0;
+    }
     public void UpdateCurrentHealth(int amount) {
         CurrentHealth = amount;
     }
-
     private void Awake() {
         if (Instance != null && Instance != this) {
             Destroy(gameObject);

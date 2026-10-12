@@ -12,6 +12,8 @@ public class GameStateManager : MonoBehaviour {
 
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameObject deathScreenPP;
 
     public GameState currentGameState;
 
@@ -71,6 +73,23 @@ public class GameStateManager : MonoBehaviour {
     public void RunGameOver() {    
         Debug.Log("EVENT: Game Over");
 
+        player.GetComponent<Health>().EnableInvincibility(99);
+        player.GetComponent<PlayerInput>().enabled = false;
+
+        deathScreen.SetActive(true);
+        deathScreenPP.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         GameOver?.Invoke();
+    }
+    public void RestartGame() {
+        PlayerStateManager.Instance.ResetState();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        sceneLoader.LoadScene(0, 0);
     }
 }

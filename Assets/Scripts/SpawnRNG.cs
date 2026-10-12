@@ -6,7 +6,7 @@ public class SpawnRNG : MonoBehaviour {
     void Start() {
         rngState = Random.Range(0, 100);
 
-        if (rngState > spawnRate) {
+        if (rngState >= spawnRate) {
             Destroy(gameObject);
         }
     }

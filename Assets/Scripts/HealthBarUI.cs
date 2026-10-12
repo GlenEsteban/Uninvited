@@ -18,9 +18,6 @@ public class HealthBarUI : MonoBehaviour {
     private void OnDisable() {
         health.OnHealthChange -= UpdateHealthBarFill;
     }
-    private void Start() {
-        damageBar.fillAmount = healthBar.fillAmount;
-    }
     private void UpdateHealthBarFill(int currentHealth, int maxHealth) {
         if (lerpingDamageBarFillAmount != null) {
             StopCoroutine(lerpingDamageBarFillAmount);
@@ -30,7 +27,13 @@ public class HealthBarUI : MonoBehaviour {
 
         healthBar.fillAmount = targetAmount;
 
-        lerpingDamageBarFillAmount = StartCoroutine(LerpDamageBarFillAmount(targetAmount));
+        // Temp fix for damage bar animation at scene load
+        if (Time.timeSinceLevelLoad < 1f) {
+            damageBar.fillAmount = targetAmount;
+        }
+        else {
+            lerpingDamageBarFillAmount = StartCoroutine(LerpDamageBarFillAmount(targetAmount));
+        }
     }
     private IEnumerator LerpDamageBarFillAmount(float targetAmount) {
         float startAmount = damageBar.fillAmount;
