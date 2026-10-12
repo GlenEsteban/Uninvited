@@ -27,6 +27,8 @@ public class GameStateManager : MonoBehaviour {
 
         currentGameState = GameState.Exploration;
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void ChangeGameState(GameState state) {
         if (currentGameState == state) { return; }
@@ -56,7 +58,14 @@ public class GameStateManager : MonoBehaviour {
     public void RunRoomTransition() {
         Debug.Log("EVENT: RoomTransition");
 
-        sceneLoader.ReloadScene(0.5f);
+        int nextLevel = PlayerStateManager.Instance.Level + 1;
+
+        if (nextLevel % 3 == 0) {
+            sceneLoader.LoadScene(2,0.5f);
+        }
+        else {
+            sceneLoader.LoadScene(1, 0.5f);
+        }
 
         player.GetComponent<Health>().EnableInvincibility(99);
         player.GetComponent<PlayerInput>().enabled = false;
@@ -90,6 +99,6 @@ public class GameStateManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        sceneLoader.LoadScene(0, 0);
+        sceneLoader.LoadScene(1, 0.5f);
     }
 }
