@@ -81,6 +81,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7867400976786951803}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4235821120085345010}
   m_SourcePrefab: {fileID: 100100000, guid: 9fd87857428a04745a696f7c5199ed17, type: 3}
 --- !u!1 &623273290836612230 stripped
 GameObject:
@@ -262,7 +265,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 46ef64cf744552a40b99a97625b9c0c8, type: 3}
   - {fileID: 8300000, guid: 6890ae4850bd2ac45a152894c81d2fef, type: 3}
-  playOnce: 1
+  playOnce: 0
   pitchDeviation: 0.1
   audioSource: {fileID: 4636371704513013243}
 --- !u!135 &9170475971718960622
@@ -302,3 +305,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.453, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &-4235821120085345010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623273290836612230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043892124652a8d43b63284c53b67015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumpIntoCamera
+  jumpForce: 1
+  jumpToTarget: {fileID: 0}
+  playOnce: 1

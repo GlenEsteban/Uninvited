@@ -34,9 +34,8 @@ public class Health : MonoBehaviour {
 
     private void Start() {
         CurrentHealth = PlayerStateManager.Instance.CurrentHealth;
-        OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
 
-        print(CurrentHealth);
+        OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
 
         regenCoroutine = StartCoroutine(RegenerateHealth());
     }

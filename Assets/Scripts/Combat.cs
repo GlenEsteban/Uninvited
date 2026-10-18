@@ -6,7 +6,6 @@ using UnityEngine;
 public class Combat : MonoBehaviour {
     public event Action Attack;
 
-    [SerializeField] int attackAmount = 19;
     [SerializeField] float attackRate = 1f;
     public bool IsInRange { get; private set; } = false;
 
@@ -35,6 +34,8 @@ public class Combat : MonoBehaviour {
 
                 Health targetHealth = target.GetComponentInParent<Health>();
                 if (targetHealth == null) { continue; }
+
+                int attackAmount = 15 + PlayerStateManager.Instance.Level;
 
                 targetHealth.TakeDamage(attackAmount);
 

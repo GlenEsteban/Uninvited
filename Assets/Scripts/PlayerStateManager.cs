@@ -15,7 +15,7 @@ public class PlayerStateManager : MonoBehaviour {
     }
     public void ResetState() {
         CurrentHealth = 100;
-        Level = 0;
+        Level = 1;
     }
     public void UpdateCurrentHealth(int amount) {
         CurrentHealth = amount;

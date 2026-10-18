@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   <CurrentHealth>k__BackingField: 100
-  <Level>k__BackingField: 0
+  <Level>k__BackingField: 1

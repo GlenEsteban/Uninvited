@@ -11,6 +11,8 @@ public class AIController : MonoBehaviour {
 
     [SerializeField] private float chaseRange = 5f;
     [SerializeField] private float chaseSpeed= 3f;
+    [SerializeField] private float maxDifficultyBonusSpeed = 4f;
+    [SerializeField] private float difficultyGrowth = 0.015f;
 
     public bool IsChasing { get; private set; } = false;
 
@@ -19,6 +21,11 @@ public class AIController : MonoBehaviour {
         agent.destination = transform.position;
 
         target = FindFirstObjectByType<CharacterController>().transform;
+
+
+        float difficultyBonusSpeed = maxDifficultyBonusSpeed * (1f - Mathf.Exp(- difficultyGrowth * PlayerStateManager.Instance.Level));
+
+        chaseSpeed += difficultyBonusSpeed;
     }
 
     private void Update() {

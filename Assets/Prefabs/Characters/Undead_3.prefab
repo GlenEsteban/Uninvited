@@ -201,7 +201,9 @@ MonoBehaviour:
   agent: {fileID: 5134809867731605820}
   lineOfSightPoint: {fileID: 20614203616084205}
   chaseRange: 17
-  chaseSpeed: 9
+  chaseSpeed: 7
+  maxDifficultyBonusSpeed: 4
+  difficultyGrowth: 0.015
 --- !u!114 &9001001187293234619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +250,6 @@ MonoBehaviour:
   movementSFXThreshold: 0.5
   idleSFXRate: 5
   chaseSFXRate: 2
-  walkSpeedSFXRate: 0.5
   runSpeedSFXRate: 0.25
 --- !u!82 &6112851277491221669
 AudioSource:
